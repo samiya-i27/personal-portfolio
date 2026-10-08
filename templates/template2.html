@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>[Your Name] — Developer</title>
+    <title>Samiya Imran — Computer Science Student</title>
     <meta
       name="description"
-      content="[Your Name] — Full Stack Developer Portfolio"
+      content="Samiya Imran — Computer Science Student Portfolio"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
@@ -747,7 +747,7 @@
     <!-- ── NAV ──────────────────────────────────────────────── -->
     <nav class="nav">
       <div class="nav-inner">
-        <a href="#home" class="nav-logo">[your name]</a>
+        <a href="#home" class="nav-logo">[Samiya Imran]</a>
         <ul class="nav-links">
           <li><a href="#home">home</a></li>
           <li><a href="#work">work</a></li>
@@ -763,15 +763,13 @@
       <div class="home-left">
         <div class="home-eyebrow">
           <div class="home-eyebrow-line"></div>
-          [your role / tite]
+          Computer Science Student
         </div>
         <h1 class="hero-title">
-          building things<br />
-          that <strong>matter.</strong>
+          Hi, I'm Samiya!
         </h1>
         <p class="hero-desc">
-          [Your description. Keep it genuine, a sentence or two. What you work
-          on, what drives you, who you are beyond the code.]
+          I'm a Computer Science student at the University of Guelph with a minor in Project Management, who turns curiosity into ideas, and ideas into code.
         </p>
         <div class="hero-actions">
           <button
@@ -808,23 +806,23 @@
           <div class="status-card-body">
             <div class="status-row">
               <span class="status-key">based in</span>
-              <span class="status-val">[your city]</span>
+              <span class="status-val">Toronto, Ontario</span>
             </div>
             <div class="status-row">
               <span class="status-key">role</span>
-              <span class="status-val">[your role]</span>
+              <span class="status-val">Computer Science Student</span>
             </div>
             <div class="status-row">
               <span class="status-key">focus</span>
-              <span class="status-val">[your focus area]</span>
+              <span class="status-val">Software Development</span>
             </div>
             <div class="status-row">
               <span class="status-key">open to</span>
-              <span class="status-val">freelance / fulltime</span>
+              <span class="status-val">Winter 2027 / Summer 2027</span>
             </div>
             <div class="status-row">
               <span class="status-key">since</span>
-              <span class="status-val">[year you started]</span>
+              <span class="status-val">2024</span>
             </div>
           </div>
         </div>
@@ -1054,10 +1052,11 @@
         ],
         { y: 24 },
       );
-
+      
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
       tl.to(".home-eyebrow", { opacity: 1, y: 0, duration: 0.7 }, 0.25)
-        .to(".hero-title", { opacity: 1, y: 0, duration: 0.9 }, 0.4)
+        .to(".hero-title", { opacity: 1, y: 0, duration: 0.9, clipPath: "inset(0 100% 0 0)" }, 0.4)
+        .to(".hero-title", { clipPath: "inset(0 0% 0 0)", duration: 1.5, ease: "power2.inOut" }, 0.4)
         .to(".hero-desc", { opacity: 1, y: 0, duration: 0.7 }, 0.65)
         .to(".hero-actions", { opacity: 1, y: 0, duration: 0.6 }, 0.8)
         .to(".home-right", { opacity: 1, y: 0, duration: 0.8 }, 0.55);
