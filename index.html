@@ -5,17 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#f5f0e8" />
   <title>Samiya Imran | Portfolio</title>
-  <meta
-    name="description"
-    content="Samiya Imran's personal portfolio. Computing student at the University of Guelph interested in software development and technology."
-  />
+  <meta name="description" content="Samiya Imran's portfolio, experience, and personal projects." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <style>
     :root {
@@ -47,7 +41,7 @@
     }
 
     body {
-      background-color: var(--paper);
+      background: var(--paper);
       color: var(--ink);
       font-family: var(--sans);
       font-size: 14px;
@@ -57,10 +51,6 @@
 
     a {
       color: inherit;
-    }
-
-    button,
-    a {
       -webkit-tap-highlight-color: transparent;
     }
 
@@ -69,7 +59,9 @@
       color: var(--paper);
     }
 
-    .page-wrap {
+    .page-wrap,
+    .nav-inner,
+    .footer-inner {
       width: min(100% - 64px, 1120px);
       margin: 0 auto;
     }
@@ -139,9 +131,7 @@
     }
 
     .nav-inner {
-      width: min(100% - 64px, 1120px);
       min-height: 72px;
-      margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -170,8 +160,8 @@
 
     .nav-links a {
       position: relative;
-      text-decoration: none;
       color: var(--ink3);
+      text-decoration: none;
       font-family: var(--mono);
       font-size: 10px;
       letter-spacing: 0.08em;
@@ -203,7 +193,6 @@
     /* Home */
 
     #home {
-      min-height: 690px;
       min-height: min(790px, calc(100svh - 72px));
       display: flex;
       align-items: center;
@@ -213,9 +202,9 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(240px, 0.65fr);
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
       align-items: center;
-      gap: clamp(40px, 8vw, 110px);
+      gap: clamp(35px, 5vw, 75px);
     }
 
     .hero-kicker {
@@ -226,28 +215,21 @@
       color: var(--ink3);
     }
 
-    .status-dot {
-      width: 7px;
-      height: 7px;
-      flex: 0 0 7px;
-      border-radius: 50%;
-      background: #658b57;
-      box-shadow: 0 0 0 4px rgba(101, 139, 87, 0.12);
-    }
-
     .hero-title {
-      max-width: 680px;
+      max-width: 100%;
       margin-bottom: 25px;
       font-family: var(--serif);
-      font-size: clamp(56px, 8vw, 100px);
+      font-size: clamp(38px, 6.4vw, 79px);
       font-weight: 400;
       letter-spacing: -0.075em;
-      line-height: 0.99;
+      line-height: 1.08;
+      white-space: nowrap;
     }
 
     .hero-title em {
       color: var(--red);
       font-weight: 400;
+      font-style: normal;
     }
 
     .hero-description {
@@ -308,6 +290,8 @@
       background: var(--paper2);
     }
 
+    /* Current status card */
+
     .hero-side {
       position: relative;
       padding: 26px;
@@ -326,24 +310,49 @@
     }
 
     .side-label {
-      margin-bottom: 22px;
+      margin-bottom: 15px;
       color: var(--ink3);
+    }
+
+    .status-open {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: var(--red);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      flex: 0 0 7px;
+      border-radius: 50%;
+      background: var(--red);
+      box-shadow: 0 0 0 4px var(--red-dim);
     }
 
     .side-line {
       display: flex;
       justify-content: space-between;
-      gap: 16px;
-      padding: 14px 0;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 12px 0;
       border-top: 1px solid var(--rule);
-      font-size: 12px;
+      font-size: 11px;
     }
 
     .side-line span:first-child {
       color: var(--ink3);
+      font-style: italic;
+      white-space: nowrap;
     }
 
     .side-line span:last-child {
+      max-width: 65%;
       text-align: right;
       font-weight: 500;
     }
@@ -351,14 +360,14 @@
     .side-mark {
       display: flex;
       justify-content: flex-end;
-      margin-top: 25px;
+      margin-top: 20px;
       color: var(--red);
       font-family: var(--serif);
       font-size: 46px;
       line-height: 1;
     }
 
-    /* Experience */
+    /* Experience / Extracurricular */
 
     .experience-list {
       border-top: 1px solid var(--rule);
@@ -394,7 +403,7 @@
     .experience-logo img {
       width: 100%;
       height: 100%;
-      padding: 8px;
+      padding: 7px;
       object-fit: contain;
     }
 
@@ -581,69 +590,59 @@
     .contact-title em {
       color: var(--red);
       font-weight: 400;
+      font-style: normal;
     }
 
-    .contact-email {
-      display: inline-block;
-      margin-top: 4px;
-      color: var(--ink2);
-      text-decoration-color: var(--ink4);
-      text-underline-offset: 6px;
-      font-size: clamp(14px, 2vw, 18px);
-      overflow-wrap: anywhere;
-      transition: color 0.25s ease;
-    }
-
-    .contact-email:hover {
-      color: var(--red);
-    }
-
-    .contact-right {
-      padding-bottom: 6px;
-    }
-
-    .contact-note {
-      margin-bottom: 24px;
-      color: var(--ink3);
-      font-size: 12px;
-      line-height: 1.9;
-    }
-
-    .social-links {
+    .contact-icons {
       display: flex;
-      flex-direction: column;
-      border-top: 1px solid var(--rule);
-    }
-
-    .social-link {
-      display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 16px;
-      padding: 13px 0;
-      border-bottom: 1px solid var(--rule);
-      text-decoration: none;
-      font-family: var(--mono);
-      font-size: 10px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      transition: color 0.25s ease;
+      gap: 23px;
+      margin-top: 36px;
     }
 
-    .social-link span:last-child {
-      color: var(--ink3);
+    .contact-icon-link {
+      width: 44px;
+      height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--red);
+      border: 1px solid var(--rule);
+      background: transparent;
       transition:
         color 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
         transform 0.25s ease;
     }
 
-    .social-link:hover,
-    .social-link:hover span:last-child {
-      color: var(--red);
+    .contact-icon-link:hover {
+      color: var(--paper);
+      background: var(--red);
+      border-color: var(--red);
+      transform: translateY(-3px);
     }
 
-    .social-link:hover span:last-child {
-      transform: translate(3px, -3px);
+    .contact-icon-link svg {
+      width: 21px;
+      height: 21px;
+      display: block;
+      fill: currentColor;
+    }
+
+    .contact-icon-link .icon-stroke {
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .contact-icon-link:focus-visible,
+    .btn:focus-visible,
+    .nav-links a:focus-visible {
+      outline: 2px solid var(--red);
+      outline-offset: 4px;
     }
 
     /* Footer */
@@ -653,9 +652,7 @@
     }
 
     .footer-inner {
-      width: min(100% - 64px, 1120px);
       min-height: 75px;
-      margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -668,20 +665,32 @@
       letter-spacing: 0.06em;
     }
 
-    /* Motion */
+    /* Responsive */
 
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        scroll-behavior: auto !important;
-        transition-duration: 0.01ms !important;
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(250px, 0.8fr);
+        gap: 30px;
+      }
+
+      .hero-title {
+        font-size: clamp(36px, 5.5vw, 57px);
+      }
+
+      .hero-side {
+        padding: 22px;
+      }
+
+      .experience-item {
+        grid-template-columns: 54px minmax(0, 1fr) auto;
+        gap: 16px;
+      }
+
+      .experience-logo {
+        width: 48px;
+        height: 48px;
       }
     }
-
-    /* Responsive */
 
     @media (max-width: 760px) {
       .page-wrap,
@@ -704,12 +713,16 @@
 
       #home {
         min-height: auto;
-        padding: 90px 0;
+        padding: 80px 0;
       }
 
       .hero-grid {
         grid-template-columns: 1fr;
-        gap: 50px;
+        gap: 45px;
+      }
+
+      .hero-title {
+        font-size: clamp(38px, 8.5vw, 64px);
       }
 
       .hero-side {
@@ -739,11 +752,7 @@
 
       .contact-grid {
         grid-template-columns: 1fr;
-        gap: 45px;
-      }
-
-      .contact-right {
-        max-width: 500px;
+        gap: 30px;
       }
     }
 
@@ -765,16 +774,17 @@
       .nav-links {
         width: 100%;
         justify-content: space-between;
-        gap: 9px;
+        gap: 8px;
       }
 
       .nav-links a {
         font-size: 8px;
-        letter-spacing: 0.04em;
+        letter-spacing: 0.03em;
       }
 
       .hero-title {
-        font-size: clamp(52px, 15vw, 72px);
+        font-size: clamp(30px, 7.7vw, 40px);
+        letter-spacing: -0.07em;
       }
 
       .hero-description {
@@ -813,8 +823,23 @@
         font-size: clamp(48px, 14vw, 68px);
       }
 
+      .contact-icons {
+        gap: 17px;
+      }
+
       .footer-inner {
         min-height: 68px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
       }
     }
   </style>
@@ -824,9 +849,7 @@
   <!-- Navigation -->
   <nav>
     <div class="nav-inner">
-      <a class="nav-logo" href="#home" aria-label="Samiya Imran home">
-        si<span>.</span>
-      </a>
+      <a class="nav-logo" href="#home" aria-label="Samiya Imran home">si<span>.</span></a>
 
       <ul class="nav-links">
         <li><a href="#home" class="active">home</a></li>
@@ -844,14 +867,10 @@
       <div class="page-wrap hero-grid">
         <div class="hero-main">
           <div class="hero-kicker mono">
-            <span class="status-dot"></span>
             Computing student · University of Guelph
           </div>
 
-          <h1 class="hero-title">
-            Hi, I'm<br />
-            <em>Samiya!</em>
-          </h1>
+          <h1 class="hero-title">Hi, I'm <em>Samiya!</em></h1>
 
           <p class="hero-description">
             I'm a Computer Science student at the University of Guelph with
@@ -860,11 +879,9 @@
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#contact">
-              get in touch <span aria-hidden="true">↗</span>
-            </a>
+            <a class="btn btn-primary" href="#contact">get in touch</a>
 
-            <!-- Add your resume PDF link here when it is ready -->
+            <!-- Add your resume PDF link when it is ready -->
             <a
               class="btn btn-outline"
               href="#"
@@ -877,26 +894,36 @@
         </div>
 
         <aside class="hero-side">
-          <div class="side-label mono">A little introduction</div>
+          <div class="side-label mono">Current status</div>
 
-          <div class="side-line">
-            <span>Currently</span>
-            <span>Studying Computing</span>
+          <div class="status-open">
+            <span class="status-dot"></span>
+            <span>Open to work</span>
           </div>
 
           <div class="side-line">
-            <span>University</span>
-            <span>University of Guelph</span>
+            <span>based in</span>
+            <span>Toronto, Ontario</span>
           </div>
 
           <div class="side-line">
-            <span>Interested in</span>
-            <span>Software & Technology</span>
+            <span>role</span>
+            <span>Computer Science Student</span>
           </div>
 
           <div class="side-line">
-            <span>Based in</span>
-            <span>Ontario, Canada</span>
+            <span>focus</span>
+            <span>Software Development</span>
+          </div>
+
+          <div class="side-line">
+            <span>open to</span>
+            <span>Winter 2027 / Summer 2027</span>
+          </div>
+
+          <div class="side-line">
+            <span>since</span>
+            <span>2024</span>
           </div>
 
           <div class="side-mark" aria-hidden="true">✳</div>
@@ -904,22 +931,19 @@
       </div>
     </section>
 
-    <!-- Experience -->
+    <!-- Experience / Extracurricular -->
     <section id="experience" class="section">
       <div class="page-wrap">
         <div class="section-head">
           <div>
-            <div class="eyebrow mono">Where I've worked</div>
-            <h2 class="section-title">Experience</h2>
+            <div class="eyebrow mono">Where I've contributed</div>
+            <h2 class="section-title">Experience / Extracurricular</h2>
           </div>
 
-          <div class="section-count mono">
-            <span>05</span> positions
-          </div>
+          <div class="section-count mono"><span>05</span> positions</div>
         </div>
 
         <div class="experience-list">
-          <!-- Newest -->
           <article class="experience-item">
             <div class="experience-logo">
               <img
@@ -928,27 +952,25 @@
                 loading="lazy"
               />
             </div>
-
             <div class="experience-info">
-              <h3 class="experience-role">
-                IT Student Advisory Committee Ambassador
-              </h3>
+              <h3 class="experience-role">IT Student Advisory Committee Ambassador</h3>
               <p class="experience-org">University of Guelph</p>
             </div>
-
             <div class="experience-date mono">Sep 2026 – Present</div>
           </article>
 
           <article class="experience-item">
             <div class="experience-logo">
-              <span class="logo-letter" aria-label="SYNK">S</span>
+              <img
+                src="https://media.licdn.com/dms/image/v2/D560BAQGVmU65RhmkgA/company-logo_200_200/B56ZnZ6TXxJkAI-/0/1760297564767/synktoday_logo?e=1793232000&v=beta&t=qi-TllBGH-L07Ai7KwYuVIZ3fkaTbPnFBnLun0oEnFo"
+                alt="SYNK logo"
+                loading="lazy"
+              />
             </div>
-
             <div class="experience-info">
               <h3 class="experience-role">Software Engineer Intern</h3>
               <p class="experience-org">SYNK</p>
             </div>
-
             <div class="experience-date mono">May 2026 – Aug 2026</div>
           </article>
 
@@ -960,14 +982,10 @@
                 loading="lazy"
               />
             </div>
-
             <div class="experience-info">
               <h3 class="experience-role">VP of Finance</h3>
-              <p class="experience-org">
-                Society of Computing and Information Science, University of Guelph
-              </p>
+              <p class="experience-org">Society of Computing and Information Science, University of Guelph</p>
             </div>
-
             <div class="experience-date mono">Nov 2025 – Sep 2026</div>
           </article>
 
@@ -979,12 +997,10 @@
                 loading="lazy"
               />
             </div>
-
             <div class="experience-info">
               <h3 class="experience-role">IT Support Analyst</h3>
               <p class="experience-org">Achev</p>
             </div>
-
             <div class="experience-date mono">May 2025 – Aug 2025</div>
           </article>
 
@@ -996,21 +1012,17 @@
                 loading="lazy"
               />
             </div>
-
             <div class="experience-info">
-              <h3 class="experience-role">
-                Machine Learning Research Assistant
-              </h3>
+              <h3 class="experience-role">Machine Learning Research Assistant</h3>
               <p class="experience-org">University of Guelph</p>
             </div>
-
             <div class="experience-date mono">Apr 2025 – Aug 2025</div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Personal Projects -->
+    <!-- Personal Projects: all four cards retained -->
     <section id="work" class="section">
       <div class="page-wrap">
         <div class="section-head">
@@ -1018,29 +1030,20 @@
             <div class="eyebrow mono">Things I've worked on</div>
             <h2 class="section-title">Personal Projects</h2>
           </div>
-
-          <div class="section-count mono">
-            <span>04</span> projects
-          </div>
+          <div class="section-count mono"><span>04</span> projects</div>
         </div>
 
-        <!-- Original four project cards retained -->
         <div class="work-grid">
           <a class="work-card" href="#" onclick="event.preventDefault()">
             <div class="work-card-top">
               <span class="work-number mono">01 / PROJECT</span>
               <span class="work-status mono">live</span>
             </div>
-
             <span class="work-arrow" aria-hidden="true">↗</span>
-
             <div class="work-card-content">
               <h3 class="work-card-title">Project Name 1</h3>
-              <p class="work-card-description">
-                A short description of this project and what it does.
-              </p>
+              <p class="work-card-description">A short description of this project and what it does.</p>
             </div>
-
             <div class="work-card-bottom">
               <div class="work-tags">
                 <span class="work-tag">html</span>
@@ -1056,16 +1059,11 @@
               <span class="work-number mono">02 / PROJECT</span>
               <span class="work-status mono">live</span>
             </div>
-
             <span class="work-arrow" aria-hidden="true">↗</span>
-
             <div class="work-card-content">
               <h3 class="work-card-title">Project Name 2</h3>
-              <p class="work-card-description">
-                A short description of this project and what it does.
-              </p>
+              <p class="work-card-description">A short description of this project and what it does.</p>
             </div>
-
             <div class="work-card-bottom">
               <div class="work-tags">
                 <span class="work-tag">react</span>
@@ -1080,16 +1078,11 @@
               <span class="work-number mono">03 / PROJECT</span>
               <span class="work-status mono">archived</span>
             </div>
-
             <span class="work-arrow" aria-hidden="true">↗</span>
-
             <div class="work-card-content">
               <h3 class="work-card-title">Project Name 3</h3>
-              <p class="work-card-description">
-                A short description of this project and what it does.
-              </p>
+              <p class="work-card-description">A short description of this project and what it does.</p>
             </div>
-
             <div class="work-card-bottom">
               <div class="work-tags">
                 <span class="work-tag">python</span>
@@ -1104,16 +1097,11 @@
               <span class="work-number mono">04 / PROJECT</span>
               <span class="work-status mono">wip</span>
             </div>
-
             <span class="work-arrow" aria-hidden="true">↗</span>
-
             <div class="work-card-content">
               <h3 class="work-card-title">Project Name 4</h3>
-              <p class="work-card-description">
-                A short description of this project and what it does.
-              </p>
+              <p class="work-card-description">A short description of this project and what it does.</p>
             </div>
-
             <div class="work-card-bottom">
               <div class="work-tags">
                 <span class="work-tag">next.js</span>
@@ -1126,7 +1114,7 @@
       </div>
     </section>
 
-    <!-- Skills -->
+    <!-- Skills: heading only for now -->
     <section id="skills" class="section">
       <div class="page-wrap">
         <div class="section-head">
@@ -1135,8 +1123,6 @@
             <h2 class="section-title">Skills</h2>
           </div>
         </div>
-
-        <!-- Skills content intentionally left empty for now -->
         <div class="skills-empty"></div>
       </div>
     </section>
@@ -1145,42 +1131,49 @@
     <section id="contact" class="section">
       <div class="page-wrap contact-grid">
         <div class="contact-body">
-          <div class="eyebrow mono">Have a project in mind?</div>
+          <div class="eyebrow mono">Get in touch</div>
+          <h2 class="contact-title">Let's <em>connect.</em></h2>
 
-          <h2 class="contact-title">
-            Let's <em>connect.</em>
-          </h2>
-
-          <a class="contact-email" href="mailto:samiyaimran27@gmail.com">
-            samiyaimran27@gmail.com
-          </a>
-        </div>
-
-        <div class="contact-right">
-          <p class="contact-note">
-            Interested in connecting, collaborating, or talking about technology?
-            Feel free to reach out.
-          </p>
-
-          <div class="social-links">
+          <div class="contact-icons">
+            <!-- GitHub -->
             <a
-              class="social-link"
+              class="contact-icon-link"
               href="https://github.com/samiya-i27"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="GitHub"
+              title="GitHub"
             >
-              <span>GitHub</span>
-              <span aria-hidden="true">↗</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.55.1.76-.24.76-.53v-2.08c-3.1.67-3.76-1.32-3.76-1.32-.5-1.28-1.23-1.62-1.23-1.62-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15 1 .1.76 2.03 3.56 1.43.1-.72.39-1.21.7-1.49-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.05 1.15a10.6 10.6 0 0 1 5.55 0c2.11-1.45 3.05-1.15 3.05-1.15.61 1.54.23 2.68.11 2.96.72.78 1.15 1.78 1.15 3 0 4.29-2.62 5.23-5.11 5.51.4.35.75 1.03.75 2.08V22c0 .29.2.64.77.53A11.1 11.1 0 0 0 12 .9Z"/>
+              </svg>
             </a>
 
+            <!-- LinkedIn -->
             <a
-              class="social-link"
+              class="contact-icon-link"
               href="https://www.linkedin.com/in/samiya-imran-03bb24387/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              title="LinkedIn"
             >
-              <span>LinkedIn</span>
-              <span aria-hidden="true">↗</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM7.93 18.8H4.98V9.3h2.95v9.5ZM6.45 8a1.71 1.71 0 1 1 .02-3.42A1.71 1.71 0 0 1 6.45 8Zm12.37 10.8h-2.94v-4.62c0-1.1-.02-2.51-1.53-2.51-1.53 0-1.76 1.19-1.76 2.43v4.7H9.65V9.3h2.82v1.3h.04a3.1 3.1 0 0 1 2.79-1.53c2.98 0 3.52 1.96 3.52 4.51v5.22Z"/>
+              </svg>
+            </a>
+
+            <!-- Email -->
+            <a
+              class="contact-icon-link"
+              href="mailto:samiyaimran27@gmail.com"
+              aria-label="Email Samiya"
+              title="Email"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect class="icon-stroke" x="2.5" y="4.5" width="19" height="15" rx="1.5" />
+                <path class="icon-stroke" d="m3.5 6 8.5 7 8.5-7" />
+              </svg>
             </a>
           </div>
         </div>
@@ -1196,14 +1189,12 @@
   </footer>
 
   <script>
-    // Smooth scrolling for internal navigation links
+    // Smooth scrolling for navigation
     document.querySelectorAll('a[href^="#"]').forEach((link) => {
       link.addEventListener("click", function (event) {
         const targetId = this.getAttribute("href");
 
-        if (!targetId || targetId === "#") {
-          return;
-        }
+        if (!targetId || targetId === "#") return;
 
         const target = document.querySelector(targetId);
 
@@ -1219,7 +1210,7 @@
       });
     });
 
-    // Highlight the navigation link for the section currently in view
+    // Highlight the navigation link for the section in view
     const sections = document.querySelectorAll("main section[id]");
     const navLinks = document.querySelectorAll(".nav-links a");
 
@@ -1229,32 +1220,27 @@
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               navLinks.forEach((link) => {
-                const isActive =
-                  link.getAttribute("href") === "#" + entry.target.id;
-
-                link.classList.toggle("active", isActive);
+                link.classList.toggle(
+                  "active",
+                  link.getAttribute("href") === "#" + entry.target.id
+                );
               });
             }
           });
         },
-        {
-          rootMargin: "-30% 0px -55% 0px",
-          threshold: 0
-        }
+        { rootMargin: "-30% 0px -55% 0px", threshold: 0 }
       );
 
       sections.forEach((section) => sectionObserver.observe(section));
     }
 
-    // Simple reveal animation that works without an external library
+    // Reveal content as it enters the screen
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const revealItems = document.querySelectorAll(
-      ".hero-main, .hero-side, .experience-item, .work-card, .contact-body, .contact-right"
+      ".hero-main, .hero-side, .experience-item, .work-card, .contact-body"
     );
 
-    if (
-      "IntersectionObserver" in window &&
-      !window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    ) {
+    if ("IntersectionObserver" in window && !reduceMotion) {
       revealItems.forEach((item) => {
         item.style.opacity = "0";
         item.style.transform = "translateY(14px)";
@@ -1272,9 +1258,7 @@
             }
           });
         },
-        {
-          threshold: 0.12
-        }
+        { threshold: 0.12 }
       );
 
       revealItems.forEach((item) => revealObserver.observe(item));
