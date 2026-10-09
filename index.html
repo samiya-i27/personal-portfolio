@@ -291,6 +291,16 @@
       text-transform: none;
     }
 
+    .status-symbol {
+      display: flex;
+      justify-content: flex-end;
+      padding-top: 18px;
+      color: var(--red);
+      font-family: var(--serif);
+      font-size: 36px;
+      line-height: 1;
+    }
+
     /* Section structure */
 
     .section {
@@ -303,7 +313,7 @@
       align-items: center;
       gap: 10px;
       margin-bottom: 14px;
-      color: var(--ink3);
+      color: var(--red);
       font-family: var(--mono);
       font-size: 10px;
       letter-spacing: 0.1em;
@@ -316,6 +326,10 @@
       height: 1px;
       flex: 0 0 26px;
       background: var(--red);
+    }
+
+    .section-eyebrow {
+      color: var(--ink3);
     }
 
     .section-title {
@@ -743,6 +757,8 @@
               <span class="side-value">2024</span>
             </div>
           </div>
+
+          <div class="status-symbol">✳</div>
         </aside>
       </div>
     </section>
