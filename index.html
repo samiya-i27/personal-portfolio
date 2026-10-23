@@ -23,8 +23,8 @@
       --rule-h: rgba(26, 23, 20, 0.28);
       --red: #c0392b;
       --red-dim: rgba(192, 57, 43, 0.1);
-      --serif: "Fraunces", Georgia, serif;
-      --mono: "DM Mono", monospace;
+      --serif: "Inter", Arial, sans-serif;
+      --mono: "Inter", Arial, sans-serif;
       --sans: "Inter", Arial, sans-serif;
       --ease: cubic-bezier(0.22, 1, 0.36, 1);
     }
@@ -44,10 +44,9 @@
       min-height: 100vh;
       background-color: var(--paper);
       background-image:
-        linear-gradient(rgba(26, 23, 20, 0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(26, 23, 20, 0.035) 1px, transparent 1px);
-      background-size: 32px 32px;
-      background-position: center top;
+        radial-gradient(ellipse at top left, rgba(192, 57, 43, 0.09), transparent 38%),
+        radial-gradient(ellipse at bottom right, rgba(192, 57, 43, 0.07), transparent 38%);
+      background-attachment: fixed;
       color: var(--ink);
       font-family: var(--sans);
       -webkit-font-smoothing: antialiased;
@@ -180,7 +179,7 @@
     .hero-title em {
       color: var(--red);
       font-weight: 400;
-      font-style: italic;
+      font-style: normal;
       letter-spacing: -0.025em;
     }
 
@@ -361,6 +360,32 @@
       font-size: 10px;
       letter-spacing: 0.06em;
       white-space: nowrap;
+    }
+
+    .resume-link {
+      color: var(--ink2);
+      font-size: 13px;
+      font-weight: 500;
+      white-space: nowrap;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .resume-link span {
+      display: inline-block;
+      margin-left: 3px;
+      color: var(--red);
+      transition: transform 0.2s ease;
+    }
+
+    .resume-link:hover {
+      color: var(--red);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .resume-link:hover span {
+      transform: translate(2px, -2px);
     }
 
     .section-eyebrow {
@@ -591,7 +616,7 @@
     .contact-title em {
       color: var(--red);
       font-weight: 400;
-      font-style: italic;
+      font-style: normal;
       letter-spacing: -0.025em;
     }
 
@@ -898,11 +923,6 @@
       <div class="container hero-grid">
 
         <div class="hero-main">
-          <div class="hero-eyebrow">
-            <span>Computing student</span>
-            <span class="eyebrow-dot"></span>
-            <span>University of Guelph</span>
-          </div>
 
           <h1 class="hero-title">
             Hi, <span class="title-muted">I'm</span> <em>Samiya!</em>
@@ -913,16 +933,7 @@
             with a minor in Project Management, who turns curiosity into
             ideas, and ideas into code.
           </p>
-
           
-          <div class="hero-buttons">
-            <a class="button button-primary" href="#contact">
-              GET IN TOUCH
-            </a>
-            <a href="resume.pdf" class="button button-secondary" target="_blank">
-              RESUME <span class="button-arrow" aria-hidden="true">↗</span>
-            </a>
-          </div>
         </div>
 
         <aside class="hero-side" aria-label="Current status">
@@ -971,7 +982,9 @@
 
         <div class="section-heading">
           <h2 class="section-title">Experience / Extracurricular</h2>
-          <span class="section-count">05 ROLES</span>
+          <a class="resume-link" href="resume.pdf" target="_blank" rel="noopener noreferrer">
+            Resume <span aria-hidden="true">↗</span>
+          </a>
         </div>
 
         <div class="experience-list">
