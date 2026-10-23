@@ -183,26 +183,33 @@
       letter-spacing: -0.025em;
     }
 
-    .hero-title {
-      animation: hero-enter 0.9s ease-out both;
+    .typing-text {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      width: 0;
+      border-right: 2px solid var(--red);
+      animation:
+      typing 2s steps(17, end) 0.3s forwards,
+      typing-cursor 0.75s step-end infinite;
     }
 
-    @keyframes hero-enter {
-      from {
-        opacity: 0;
-        transform: translateY(14px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes typing-cursor {
+      50% { border-color: transparent; }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .hero-title {
+      .typing-text {
+        width: auto;
+        border-right: none;
         animation: none;
       }
-    }
+  }
 
     .hero-description {
       max-width: 510px;
@@ -431,7 +438,7 @@
       position: absolute;
       left: 1px;
       bottom: 0px;
-      width: 12.7px;
+      width: 11px;
       height: 1.5px;
       background: var(--red);
       transform: rotate(-45deg);
@@ -985,7 +992,7 @@
         <div class="hero-main">
 
           <h1 class="hero-title">
-            Hi, <span class="title-muted">I'm</span> <em>Samiya!</em>
+            <span class="typing-text">Hi, <span class="title-muted">I'm</span> <em>Samiya!</em></span>
           </h1>
 
           <p class="hero-description">
