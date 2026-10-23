@@ -178,9 +178,9 @@
 
     .hero-title em {
       color: var(--red);
-      font-weight: 400;
-      font-style: normal;
-      letter-spacing: -0.025em;
+      font-weight: 600;
+      font-style: italic;
+      letter-spacing: -0.045em;
     }
 
     .hero-description {
@@ -284,11 +284,25 @@
     }
 
     .status-dot {
-      width: 5px;
-      height: 5px;
-      flex: 0 0 7px;
+      width: 6px;
+      height: 6px;
+      flex: 0 0 6px;
       border-radius: 50%;
       background: var(--red);
+      box-shadow: 0 0 0 3px var(--red-dim);
+      animation: status-pulse 1.8s ease-in-out infinite;
+    }
+
+    @keyframes status-pulse {
+      0%, 100% {
+        opacity: 1;
+        box-shadow: 0 0 0 3px var(--red-dim);
+      }
+
+      50% {
+        opacity: 0.6;
+        box-shadow: 0 0 0 5px rgba(192, 57, 43, 0.04);
+      }
     }
 
     .side-line {
@@ -335,7 +349,6 @@
 
     .section {
       padding: 92px 0;
-      border-top: 1px solid var(--rule);
     }
 
     .section-heading {
@@ -575,7 +588,6 @@
 
     .contact-section {
       padding: 100px 0 108px;
-      border-top: 1px solid var(--rule);
     }
 
     .contact-grid {
@@ -857,7 +869,8 @@
 
       .hero-title {
         font-size: 30px;
-        letter-spacing: -0.025em;
+        letter-spacing: -0.045em;
+        word-spacing: -0.06em;
       }
 
       .hero-side {
