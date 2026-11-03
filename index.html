@@ -341,19 +341,43 @@
       border-radius: 190px 190px 16px 16px;
     }
 
-    .photo-sticker {
+        .photo-sticker {
       position: absolute;
-      top: 22px;
-      left: -14px;
+      top: 20px;
+      left: -18px;
       z-index: 3;
-      padding: 8px 15px;
+      padding: 14px 24px;
       color: var(--paper);
       background: var(--red);
       border-radius: 999px;
       font-size: 12px;
       font-weight: 500;
       line-height: 1.2;
-      transform: rotate(-8deg);
+      white-space: nowrap;
+      transform: rotate(-6deg);
+    }
+
+    .photo-sticker::before,
+    .photo-sticker::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      background: var(--red);
+      border-radius: 50%;
+    }
+
+    .photo-sticker::before {
+      top: -11px;
+      left: 20px;
+      width: 28px;
+      height: 28px;
+    }
+
+    .photo-sticker::after {
+      top: -17px;
+      left: 46px;
+      width: 36px;
+      height: 36px;
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1246,7 +1270,7 @@
 
           <div class="hero-photo">
             <img src="portfoliopic.jpeg" alt="Samiya Imran">
-            <span class="photo-sticker">CS @ Guelph</span>
+            <span class="photo-sticker">building &amp; learning</span>
           </div>
 
           <aside class="hero-side" aria-label="Current status">
