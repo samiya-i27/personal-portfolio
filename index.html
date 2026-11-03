@@ -762,7 +762,7 @@
 }
 
 .project-stack-label {
-  margin-bottom: 12px;
+  margin-bottom: 4px;
   color: var(--ink2);
   font-family: var(--mono);
   font-size: 10px;
@@ -770,21 +770,76 @@
   text-transform: uppercase;
 }
 
-.project-tags {
+.project-stack {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  row-gap: 22px;
   margin-bottom: 28px;
+  padding-top: 18px;
 }
 
-.project-tag {
-  padding: 6px 10px;
+.project-stack > span {
+  position: relative;
+  padding: 0 14px;
+  border-left: 1px solid var(--rule-h);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  cursor: default;
+  transition: color 0.2s ease;
+}
+
+.project-stack > span:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.project-stack > span:hover {
   color: var(--red);
-  background: var(--red-dim);
-  border: 1px solid rgba(192, 57, 43, 0.18);
+}
+
+.stack-role {
+  position: absolute;
+  top: -18px;
+  left: 14px;
+  color: var(--red);
   font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.02em;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.project-stack > span:first-child .stack-role {
+  left: 0;
+}
+
+.project-stack > span:hover .stack-role {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (hover: none) {
+  .project-stack {
+    padding-top: 0;
+    row-gap: 16px;
+  }
+
+  .project-stack > span {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .stack-role {
+    position: static;
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .project-links {
@@ -1461,12 +1516,12 @@
 
     <p class="project-stack-label">Built with</p>
 
-    <div class="project-tags">
-      <span class="project-tag">JavaScript</span>
-      <span class="project-tag">Three.js</span>
-      <span class="project-tag">MediaPipe</span>
-      <span class="project-tag">Node.js</span>
-      <span class="project-tag">Gemini API</span>
+    <div class="project-stack">
+      <span><span class="stack-role">Language</span>JavaScript</span>
+      <span><span class="stack-role">3D worlds</span>Three.js</span>
+      <span><span class="stack-role">Gestures</span>MediaPipe</span>
+      <span><span class="stack-role">Backend</span>Node.js</span>
+      <span><span class="stack-role">AI</span>Gemini API</span>
     </div>
 
     <div class="project-links">
