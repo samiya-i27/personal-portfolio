@@ -281,17 +281,98 @@
 
     /* Current status */
 
-    .hero-side {
-      width: 100%;
-      min-height: 180px;
-      padding: 26px 30px;
+        .hero-side {
+      position: relative;
+      z-index: 2;
+      width: calc(100% + 48px);
+      margin: -64px 0 0 -48px;
+      padding: 24px 28px;
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
       align-content: start;
       align-items: center;
       column-gap: 20px;
-      background: rgba(237, 232, 223, 0.68);
+      background: rgba(245, 240, 232, 0.93);
+      backdrop-filter: blur(8px);
       border: 1px solid var(--rule);
+    }
+
+    .side-line.highlight .side-value {
+      color: var(--red);
+    }
+
+    /* Hero photo */
+
+    .hero-visual {
+      width: 100%;
+      max-width: 380px;
+      justify-self: end;
+      opacity: 0;
+      animation: hero-enter 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.5s forwards;
+    }
+
+    .hero-photo {
+      position: relative;
+    }
+
+    .hero-photo::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border: 1.5px solid var(--red);
+      border-radius: 190px 190px 16px 16px;
+      transform: translate(14px, 14px);
+      transition: transform 0.4s var(--ease);
+    }
+
+    .hero-photo:hover::before {
+      transform: translate(7px, 7px);
+    }
+
+    .hero-photo img {
+      position: relative;
+      z-index: 1;
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center top;
+      border: 1px solid var(--rule);
+      border-radius: 190px 190px 16px 16px;
+    }
+
+    .photo-sticker {
+      position: absolute;
+      top: 22px;
+      left: -14px;
+      z-index: 3;
+      padding: 8px 15px;
+      color: var(--paper);
+      background: var(--red);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 1.2;
+      transform: rotate(-8deg);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-visual {
+        opacity: 1;
+        animation: none;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .hero-visual {
+        max-width: 340px;
+        justify-self: start;
+      }
+
+      .hero-side {
+        width: calc(100% - 24px);
+        margin: -56px 0 0 24px;
+      }
     }
 
     .side-label {
@@ -1161,40 +1242,38 @@
           
         </div>
 
-        <aside class="hero-side" aria-label="Current status">
-          <div class="side-label">Current status</div>
+        <div class="hero-visual">
 
-          <div class="status-open">
-            <span class="status-dot"></span>
-            <span>OPEN TO WORK</span>
+          <div class="hero-photo">
+            <img src="portfoliopic.jpeg" alt="Samiya Imran">
+            <span class="photo-sticker">CS @ Guelph</span>
           </div>
 
-          <div class="side-line">
-            <span class="side-key">based in</span>
-            <span class="side-value">Toronto, Ontario</span>
-          </div>
+          <aside class="hero-side" aria-label="Current status">
+            <div class="side-label">Current status</div>
 
-          <div class="side-line">
-            <span class="side-key">role</span>
-            <span class="side-value">Computer Science Student</span>
-          </div>
+            <div class="status-open">
+              <span class="status-dot"></span>
+              <span>OPEN TO WORK</span>
+            </div>
 
-          <div class="side-line">
-            <span class="side-key">focus</span>
-            <span class="side-value">Software Development</span>
-          </div>
+            <div class="side-line">
+              <span class="side-key">based in</span>
+              <span class="side-value">Toronto, Ontario</span>
+            </div>
 
-          <div class="side-line">
-            <span class="side-key">open to</span>
-            <span class="side-value">Winter 2027 / Summer 2027</span>
-          </div>
+            <div class="side-line">
+              <span class="side-key">focus</span>
+              <span class="side-value">Software Development</span>
+            </div>
 
-          <div class="side-line">
-            <span class="side-key">since</span>
-            <span class="side-value">2024</span>
-          </div>
+            <div class="side-line">
+              <span class="side-key">open to</span>
+              <span class="side-value">Winter 2027 / Summer 2027</span>
+            </div>
+          </aside>
 
-        </aside>
+        </div>
 
       </div>
     </section>
